@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CHANGE THIS: The title that appears on the browser tab -->
+    <title>Mark Harold T. Valderrama | Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for easy icons (optional, but good for contact links) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <div class="logo">MARK.DEV</div>
+            
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <button id="theme-toggle" class="btn-theme"><i class="fas fa-moon"></i></button>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="container">
+            <div class="hero-content">
+                <h1 class="accent-text">HELLO!</h1>
+                <!-- CHANGE THIS: Your main headline/title -->
+                <h2>I AM A COMPUTER SCIENCE STUDENT & DEVELOPER, BRINGING IDEAS TO LIFE THROUGH CODE.</h2>
+                <a href="#contact" class="btn-primary">GET IN TOUCH</a>
+            </div>
+            <div class="hero-image">
+                <!-- CHANGE THIS: Add your image to the assets folder and update the src -->
+                <img src="assets/images/hero-profile.jpg" alt="Profile Picture placeholder">
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="container">
+            <div class="section-header">
+                <h2>ABOUT <span>ME</span></h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <!-- CHANGE THIS: Your personal biography -->
+                    <p>I am Mark Harold T. Valderrama, a third-year Computer Science student at Holy Angel University. I have a deep passion for exploring how technology can solve real-world problems.</p>
+                    <p>My journey in development has led me to specialize in mobile application development with Flutter and Dart, alongside cloud computing and DevOps using Amazon Web Services. I am also deeply interested in Machine Learning and AI, specifically working with Convolutional Neural Networks (CNNs).</p>
+                    <a href="assets/Mark_Resume.pdf" target="_blank" class="btn-secondary">DOWNLOAD RESUME</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="container">
+            <div class="section-header">
+                <h2>MY <span>EDUCATION</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Bachelor of Science in Computer Science</h4>
+                    <h5>Holy Angel University | 2023 - Present</h5>
+                    <p class="highlight-text">President's Lister</p>
+                    <p>Consistently maintained top academic standing since my first semester.</p>
+                    <p class="highlight-text">HAFRD Academic Scholar</p>
+                    <p>Awarded the HAFRD Academic Scholarship during my third year in recognition of outstanding academic performance.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>Science, Technology, Engineering, and Mathematics (STEM) </h4>
+                    <h5>Angeles City Science High School | 2021 - 2023</h5>
+                    <p class="highlight-text">With Honors</p>
+                    <p>Graduated with honors.</p>
+                    <p class="highlight-text">Math Society Member (2022 - 2023)</p>
+                    <p>Being member of one of the most active clubs in the school in our batch.</p>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="container">
+            <div class="section-header">
+                <h2>MY <span>SKILLS</span></h2>
+            </div>
+            <div class="grid-layout">
+                
+                <!-- Card 1: Programming Languages -->
+                <div class="card">
+                    <h3>Programming Languages</h3>
+                    <ul class="skills-list">
+                        <li><i class="fab fa-python"></i> Python</li>
+                        <li><i class="fab fa-java"></i> Java</li>
+                        <li><i class="fab fa-css3-alt"></i> CSS</li>
+                        <li><i class="fab fa-js-square"></i> JavaScript</li>
+                        <li><i class="fas fa-code"></i> Dart</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Frameworks & Tools -->
+                <div class="card">
+                    <h3>Frameworks & Tools</h3>
+                    <ul class="skills-list">
+                        <li><i class="fas fa-mobile-alt"></i> Flutter</li>
+                        <li><i class="fas fa-database"></i> Supabase</li>
+                        <li><i class="fas fa-laptop-code"></i> Visual Studio Code</li>
+                        <li><i class="fab fa-figma"></i> Figma</li>
+                        <li><i class="fab fa-github"></i> GitHub</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Database Management -->
+                <div class="card">
+                    <h3>Database Management</h3>
+                    <ul class="skills-list">
+                        <li><i class="fas fa-server"></i> MySQL</li>
+                        <li><i class="fas fa-database"></i> PostgreSQL</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Soft Skills -->
+                <div class="card">
+                    <h3>Soft Skills</h3>
+                    <ul class="skills-list">
+                        <li><i class="fas fa-comments"></i> Communication & Collaboration</li>
+                        <li><i class="fas fa-sync-alt"></i> Teamwork & Adaptability</li>
+                        <li><i class="fas fa-clock"></i> Time Management & Organization</li>
+                        <li><i class="fas fa-puzzle-piece"></i> Problem-Solving & Critical Thinking</li>
+                        <li><i class="fas fa-rocket"></i> Willingness to Learn New Tech</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="container">
+            <div class="section-header">
+                <h2>FEATURED <span>PROJECTS</span></h2>
+            </div>
+            <div class="grid-layout">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <!-- NEW: Media Container -->
+                    <div class="project-media">
+                        <!-- For an image, use this: -->
+                        <img src="assets/images/palai-demo.jpg" alt="PalAI App Screenshot">
+                        
+                        <!-- If you want a silent, looping demo video instead, COMMENT OUT the <img> above and UNCOMMENT the <video> below: -->
+                        <!-- <video autoplay loop muted playsinline><source src="assets/videos/palai-demo.mp4" type="video/mp4"></video> -->
+                    </div>
+                    <div class="project-info">
+                        <h3>PalAI</h3>
+                        <p>An AI-powered mobile application utilizing MobileNetV4 for accurate rice disease detection in the Pampanga region.</p>
+                        <a href="#" class="btn-outline">VIEW REPO</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="assets/images/alertwave-demo.jpg" alt="AlertWave App Screenshot">
+                    </div>
+                    <div class="project-info">
+                        <h3>AlertWave</h3>
+                        <p>A mobile accessibility app built to detect environmental sounds using CNN-based audio classification.</p>
+                        <a href="#" class="btn-outline">VIEW REPO</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="assets/images/chainpulse-demo.jpg" alt="ChainPulse Web Prototype Screenshot">
+                    </div>
+                    <div class="project-info">
+                        <h3>ChainPulse</h3>
+                        <p>A web-based blockchain prototype designed for decentralized news and credential verification.</p>
+                        <a href="#" class="btn-outline">VIEW REPO</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="container">
+            <div class="section-header">
+                <h2>MY <span>EXPERIENCE</span></h2>
+            </div>
+            <div class="timeline">
+                <!-- CHANGE THIS: Add your experience here -->
+                <div class="timeline-item">
+                    <h4 class="highlight-text">Committee Staff for Public Relation and Information</h4>
+                    <h5>Code Geeks - Holy Angel University | Jun 2024 - April 2026</h5>
+                    <p>Recorded and shared accurate minutes after virtual team meetings, drafted clear email templates for distributing event certificates to attendees, and assisted in writing structured scripts for organizational events.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4 class="highlight-text">Committee Staff for Finance</h4>
+                    <h5>Google Developers Group on Campus - Holy Angel University | Jun 2025 - April 2026</h5>
+                    <p>Handled payments received for GDG staff uniforms, verified that the collected amounts aligned with the number of purchases recorded in Google Forms, and computed the total revenue from merchandise sales.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4 class="highlight-text">CSO Representative</h4>
+                    <h5>AWS Learning Club - Holy Angel University | Jun 2025 - April 2026</h5>
+                    <p>Primarily handled major announcements from the heads of school organizations and communicated them effectively to the club’s officers.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4 class="highlight-text">Cloudstaff’s AI Hackathon 2025 Participant</h4>
+                    <h5>Cloudstaff | November 2025</h5>
+                    <p>Our team was awarded for Best Student Contribution.</p>
+                    <p>Developed an AI-powered chatbot using Dify with a clean and functional front-end interface for seamless user interaction, and delivered a compelling final pitch to judges effectively communicating the project’s technical value and real-world application.</p>
+                </div>  
+                <div class="timeline-item">
+                    <h4 class="highlight-text">Philippine Junior Data Science Challenge (PJDSC) 2025 Participant</h4>
+                    <h5>University of the Philippines Diliman | September - November 2025</h5>
+                    <p>Our team was recognized as Top 10 Finalists.</p>
+                    <p>Engineered a scalable backend architecture using Python to efficiently manage, process, and route application data, and successfully integrated the frontend interface with backend database systems to ensure seamless data flow and a cohesive final product.</p>
+                </div>              
+                <div class="timeline-item">
+                    <h4 class="highlight-text">Committee Staff for Creatives</h4>
+                    <h5>League of Outstanding Programmers - Holy Angel University | June 2024 - April 2025</h5>
+                    <p>Assigned to take photos and record videos during events for documentation purposes, which were later used in official letters and social media posts.</p>
+                </div>     
+                <div class="timeline-item">
+                    <h4 class="highlight-text">Committee Staff for Logistics</h4>
+                    <h5>School of Computing Student Council - Holy Angel University | November 2024 - April 2025</h5>
+                    <p>Assisted in logistics operations by managing on-site supply distribution during events and maintaining office organization and cleanliness to support efficient team workflows.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4 class="highlight-text">Committee Staff for Vice-Governor</h4>
+                    <h5>School of Computing Student Council - Holy Angel University | June 2024 - October 2024</h5>
+                    <p>Assigned as a support member for various tasks, including props creation, and assisted in areas where additional manpower was needed during events.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4 class="highlight-text">Student Assistant</h4>
+                    <h5>Holy Angel University | November 2023 - October 2024</h5>
+                    <p>Digitized daily physical logs into Excel databases to ensure accurate tracking of incoming and outgoing departmental assets, and conducted daily classroom schedule audits through physical walkthroughs to verify and monitor professor attendance.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications" class="container">
+            <div class="section-header">
+                <h2>MY <span>CERTIFICATIONS</span></h2>
+            </div>
+            <div class="grid-layout">
+                
+                <!-- Certification 1 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/CISCO/IBM.png" alt="IBM Artificial Intelligence Fundamentals">
+                    </div>
+                    <div class="cert-info">
+                        <h3>IBM Artificial Intelligence Fundamentals</h3>
+                        <p>Issued March 2026</p>
+                    </div>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/CISCO/Data_Science.png" alt="Data Science Essentials with Python">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Data Science Essentials with Python</h3>
+                        <p>Issued January 2026</p>
+                    </div>
+                </div>
+
+                <!-- Certification 3 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/CISCO/IntroData.png" alt="Introduction to Data Science">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Introduction to Data Science</h3>
+                        <p>Issued January 2026</p>
+                    </div>
+                </div>
+
+                <!-- Certification 4 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/CISCO/Data_Analytics.png" alt="Data Analytics Essentials">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Data Analytics Essentials</h3>
+                        <p>Issued January 2026</p>
+                    </div>
+                </div>  
+
+                <!-- Certification 5 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/AWS/AWS.png" alt="AWS Academy Graduate Cloud Foundations Training Badge">
+                    </div>
+                    <div class="cert-info">
+                        <h3>AWS Academy Graduate Cloud Foundations Training Badge</h3>
+                        <p>Issued December 2025</p>
+                    </div>
+                </div>
+
+                <!-- Certification 6 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/CISCO/Cyber_Threat.png" alt="Cyber Threat Management">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Cyber Threat Management</h3>
+                        <p>Issued November 2025</p>
+                    </div>
+                </div>  
+                
+                <!-- Certification 7 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/FCC/BackEnd.png" alt="Back End Development and APIs">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Back End Development and APIs</h3>
+                        <p>Issued October 2025</p>
+                    </div>
+                </div>
+
+                <!-- Certification 8 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/Google/Gemini.png" alt="Gemini for DevOps Engineers">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Gemini for DevOps Engineers</h3>
+                        <p>Issued September 2025</p>
+                    </div>
+                </div>  
+                
+                <!-- Certification 9 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/CISCO/JS2.png" alt="JavaScript Essentials 2">
+                    </div>
+                    <div class="cert-info">
+                        <h3>JavaScript Essentials 2</h3>
+                        <p>Issued September 2025</p>
+                    </div>
+                </div>
+
+                <!-- Certification 10 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/CISCO/EndPoint.png" alt="Endpoint Security">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Endpoint Security</h3>
+                        <p>Issued August 2025</p>
+                    </div>
+                </div>  
+                
+                <!-- Certification 11 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/SimpliLearn/IntroUIUX.png" alt="Introduction to Graphic Design; Basics of UI/UX">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Introduction to Graphic Design; Basics of UI/UX</h3>
+                        <p>Issued August 2025</p>
+                    </div>
+                </div>
+                
+                <!-- Certification 12 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/CISCO/CSS.png" alt="CSS Essentials">
+                    </div>
+                    <div class="cert-info">
+                        <h3>CSS Essentials</h3>
+                        <p>Issued May 2025</p>
+                    </div>
+                </div>
+
+                <!-- Certification 13 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/CISCO/HTML.png" alt="HTML Essentials">
+                    </div>
+                    <div class="cert-info">
+                        <h3>HTML Essentials</h3>
+                        <p>Issued April 2025</p>
+                    </div>
+                </div>  
+
+                <!-- Certification 14 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/FCC/Database.png" alt="Relational Database">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Relational Database</h3>
+                        <p>Issued January 2025</p>
+                    </div>
+                </div>
+
+                <!-- Certification 15 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/CISCO/JS1.png" alt="JavaScript Essentials 1">
+                    </div>
+                    <div class="cert-info">
+                        <h3>JavaScript Essentials 1</h3>
+                        <p>Issued October 2024</p>
+                    </div>
+                </div>  
+                
+                <!-- Certification 16 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/SimpliLearn/IntroFigma.png" alt="Introduction to Figma Course">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Introduction to Figma Course</h3>
+                        <p>Issued September 2024</p>
+                    </div>
+                </div>
+
+                <!-- Certification 17 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/Coursera/CourseraFigma.png" alt="Work with Components in Figma">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Work with Components in Figma</h3>
+                        <p>Issued September 2024</p>
+                    </div>
+                </div>
+
+                <!-- Certification 18 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/FCC/WebDesign.png" alt="Responsive Web Design">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Responsive Web Design</h3>
+                        <p>Issued August 2024</p>
+                    </div>
+                </div>  
+
+                <!-- Certification 19 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/EC/BasicTurtle.png" alt="Learn Python 3 with Turtle">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Learn Python 3 with Turtle</h3>
+                        <p>Issued January 2024</p>
+                    </div>
+                </div>
+
+                <!-- Certification 20 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/EC/BasicPython.png" alt="Python for Absolute Beginners">
+                    </div>
+                    <div class="cert-info">
+                        <h3>Python for Absolute Beginners</h3>
+                        <p>Issued January 2024</p>
+                    </div>
+                </div>  
+                
+                <!-- Certification 21 -->
+                <div class="cert-card">
+                    <div class="cert-media">
+                        <img src="assets/certificates/CompTIA/Comptia.png" alt="CompTIA IT Fundamentals+ (ITF+) Certification">
+                    </div>
+                    <div class="cert-info">
+                        <h3>CompTIA IT Fundamentals+ (ITF+) Certification</h3>
+                        <p>Issued November 2023</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="container">
+            <div class="section-header">
+                <h2>GET IN <span>TOUCH</span></h2>
+            </div>
+            <div class="contact-info">
+                <!-- CHANGE THIS: Your contact links -->
+                <p>Feel free to reach out for collaborations or just a friendly chat!</p>
+                <div class="social-links">
+                    <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mark Harold T. Valderrama. All rights reserved.</p>
+    </footer>
+    <!-- ========================================= -->
+    <!-- NEW: LIGHTBOX MODAL FOR CERTIFICATES -->
+    <!-- ========================================= -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

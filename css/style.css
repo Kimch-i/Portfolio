@@ -1,0 +1,605 @@
+/* =========================================
+   VARIABLES & THEME SETUP
+   CHANGE THESE COLORS TO CUSTOMIZE THE LOOK
+========================================= */
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --secondary-text: #b3b3b3;
+    --accent-color: #ff5722; /* The orange from your reference */
+    --card-bg: #1e1e1e;
+    --nav-bg: rgba(18, 18, 18, 0.95);
+}
+
+/* Light Mode Variables */
+.light-mode {
+    --bg-color: #f4f4f5;
+    --text-color: #121212;
+    --secondary-text: #4a4a4a;
+    --card-bg: #ffffff;
+    --nav-bg: rgba(244, 244, 245, 0.95);
+}
+
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth; 
+    scroll-padding-top: 100px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+/* =========================================
+   BACKGROUND PARTICLE CANVAS
+========================================= */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; 
+    z-index: -1; /* Keeps the dust in the background */
+}
+
+/* =========================================
+   TYPOGRAPHY & BUTTONS
+========================================= */
+h1, h2, h3, h4 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.accent-text {
+    font-family: 'Caveat', cursive; 
+    color: var(--text-color);
+    font-size: 5.5rem; /* Made slightly bigger because handwriting fonts run small */
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    display: inline-block;
+}
+
+.section-header span {
+    position: relative;
+}
+
+.section-header span::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    z-index: -1;
+}
+
+.btn-primary, .btn-secondary, .btn-outline {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+}
+.btn-primary:hover { background-color: #e64a19; }
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+/* =========================================
+   NAVIGATION (Fixed Alignment & Premium Hover)
+========================================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+nav {
+    display: grid;
+    /* 'auto 1fr auto' lets the middle section take up all available space, pushing the sides out */
+    grid-template-columns: auto 1fr auto; 
+    align-items: center;
+    padding: 20px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px; /* The "invisible wall" that guarantees HOME will never touch the logo */
+}
+
+/* 1. Leftmost */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    justify-self: start; 
+    white-space: nowrap; 
+}
+
+/* 2. Dead Center */
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centers the items perfectly within the middle grid column */
+    gap: 35px;
+    width: 100%;
+}
+
+.nav-links a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    position: relative; /* Required for the animated underline */
+    padding: 5px 0; 
+    /* Smooth transition for the color, shadow, and lift effect */
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease; 
+}
+
+/* The Animated Underline Element */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%; /* Starts exactly in the middle */
+    background-color: var(--accent-color);
+    transition: width 0.3s ease, transform 0.3s ease;
+    transform: translateX(-50%); /* Keeps it centered as it grows outwards */
+}
+
+/* 3. The New Appealing Hover Animation */
+.nav-links a:hover {
+    color: var(--accent-color); 
+    /* This simulates 'bold' perfectly without making the other links jiggle! */
+    text-shadow: 0.5px 0 0 var(--accent-color), -0.5px 0 0 var(--accent-color); 
+    transform: translateY(-2px); /* Gives the text a premium 'lift' off the page */
+}
+
+/* Makes the underline grow to 100% on hover */
+.nav-links a:hover::after {
+    width: 100%; 
+}
+
+/* 4. Rightmost */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+    justify-self: end; 
+}
+
+.btn-theme {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-theme:hover {
+    color: var(--accent-color);
+    transform: rotate(15deg); /* Adds a little playful tilt to the moon/sun on hover */
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.hamburger:hover {
+    color: var(--accent-color);
+}
+/* =========================================
+   LAYOUTS (Grid & Flex)
+========================================= */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.hero-content h2 {
+    font-size: 1.2rem;
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 10px 10px 0px var(--accent-color);
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* =========================================
+   CARDS (Skills, Projects, Certifications)
+========================================= */
+.card, .project-card, .cert-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border-top: 4px solid transparent;
+    transition: border-color 0.3s, transform 0.3s;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+}
+
+.card { padding: 30px; } 
+
+.project-info, .cert-info {
+    padding: 30px;
+    flex-grow: 1; 
+}
+
+.card:hover, .project-card:hover, .cert-card:hover {
+    border-top-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.card h3, .project-card h3, .cert-card h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.card p, .project-card p, .cert-card p {
+    color: var(--secondary-text);
+}
+
+/* =========================================
+   MEDIA HOVER REVEAL (Images/Videos in Cards)
+========================================= */
+.project-media, .cert-media {
+    width: 100%;
+    height: 0;           
+    opacity: 0;          
+    background-color: #000;
+    overflow: hidden;
+    transition: height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease-in-out;
+}
+
+.project-card:hover .project-media,
+.cert-card:hover .cert-media {
+    height: 220px;       
+    opacity: 1;          
+}
+
+/* Projects keep 'cover' so app screenshots fill the box beautifully */
+.project-media img, 
+.project-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.5s ease;
+}
+
+/* Certificates use 'contain' so the entire document is visible without cropping */
+.cert-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* This is the magic word that fixes your issue */
+    object-position: center; /* Centers the certificate in the box */
+    transition: transform 0.5s ease;
+    background-color: var(--card-bg); /* Blends the empty space with the card color */
+}
+
+.project-card:hover .project-media img,
+.project-card:hover .project-media video,
+.cert-card:hover .cert-media img {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   TIMELINE & FOOTER
+========================================= */
+.timeline {
+    border-left: 2px solid var(--accent-color);
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    left: -27px;
+    top: 5px;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover { color: var(--accent-color); }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--card-bg);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   CUSTOM SCROLLBAR
+========================================= */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color); 
+}
+
+/* This is the part that makes it orange */
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color); 
+    border-radius: 5px;
+}
+
+/* This makes it a slightly darker orange when you click/hover on it */
+::-webkit-scrollbar-thumb:hover {
+    background: #e64a19; 
+}
+
+/* =========================================
+   CERTIFICATE LIGHTBOX (Popup)
+========================================= */
+/* Adds a magnifying glass cursor when hovering over certificates */
+.cert-media img {
+    cursor: zoom-in;
+}
+
+/* The dark background overlay */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 2000; /* Stays on top of everything, even the nav */
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.85); /* Dark semi-transparent background */
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Class added by JavaScript to show the lightbox */
+.lightbox.active {
+    display: flex;
+}
+
+/* The actual full-size certificate image */
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 87, 34, 0.4);
+}
+
+/* The 'X' close button */
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-lightbox:hover {
+    color: var(--accent-color);
+}
+
+.highlight-text {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* =========================================
+   SKILLS LIST STYLING (Works for all skills now!)
+========================================= */
+.skills-list {
+    list-style: none; 
+    padding: 0;
+    margin-top: 15px;
+}
+
+.skills-list li {
+    color: var(--secondary-text);
+    margin-bottom: 15px; 
+    display: flex;
+    align-items: center; 
+    gap: 15px; 
+}
+
+.skills-list i {
+    color: var(--accent-color); 
+    font-size: 1.2rem;
+    width: 25px; 
+    text-align: center;
+}
+/* =========================================
+   RESPONSIVE DESIGN (Tablets & Phones)
+========================================= */
+
+/* 1. TABLET FIXES: For screens slightly smaller than a desktop */
+@media (max-width: 1024px) {
+    nav {
+        gap: 20px; /* Reduces the 'invisible wall' between logo and links */
+    }
+    .nav-links {
+        gap: 15px; /* Brings text links closer together */
+    }
+    .nav-links a {
+        font-size: 0.8rem; /* Shrinks the text slightly so it doesn't collide */
+    }
+}
+
+/* 2. MOBILE FIXES: For Phones */
+@media (max-width: 768px) {
+    /* Adjusts the main header layout to just 2 columns */
+    nav {
+        grid-template-columns: 1fr auto; 
+        gap: 10px;
+        padding: 15px 5%;
+    }
+
+    /* Groups the moon icon and hamburger together on the right */
+    .nav-controls {
+        grid-column: 2;
+    }
+
+    .hamburger { display: block; }
+
+    /* THE NEW SLEEK DROPDOWN MENU */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; 
+        right: 5%; /* Aligns the box to the right instead of stretching across */
+        width: 220px; /* Keeps the box compact! */
+        background-color: var(--card-bg); /* Matches your cards */
+        border: 1px solid var(--accent-color); /* Cool orange border */
+        border-radius: 8px; 
+        padding: 10px 0;
+        text-align: left; /* Text looks cleaner aligned left in a small box */
+        box-shadow: 0 10px 25px rgba(0,0,0,0.8); /* Strong drop shadow to make it pop */
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li { 
+        margin: 0; /* Removes the massive vertical spacing */
+    }
+
+    .nav-links a {
+        display: block; /* Makes the whole row clickable */
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Modifies the hover animation for mobile */
+    .nav-links a:hover {
+        background-color: rgba(255, 87, 34, 0.1); /* Subtle orange tint background */
+        transform: none; /* Turns off the 'lift' effect so the menu doesn't jiggle */
+        text-shadow: none;
+    }
+
+    .nav-links a::after {
+        display: none; /* Hides the animated underline in the mobile dropdown */
+    }
+
+    /* -------------------------------------
+       Rest of your mobile fixes
+       ------------------------------------- */
+    #hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 100px;
+    }
+    
+    .hero-content { 
+        padding-right: 0; 
+        margin-top: 40px; 
+    }
+
+    /* Scaled down to match the Caveat font */
+    .accent-text { font-size: 4rem; } 
+    .section-header h2 { font-size: 2rem; }
+    .hero-content h2 { font-size: 1rem; }
+    
+    .hero-image img { 
+        box-shadow: none; 
+        border: 2px solid var(--accent-color); 
+        max-width: 80%; 
+    }
+
+    .container { padding: 50px 20px; }
+    .grid-layout { gap: 20px; }
+
+    .project-media, .cert-media {
+        height: 200px; 
+        opacity: 1;
+    }
+}
