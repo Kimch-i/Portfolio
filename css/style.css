@@ -308,9 +308,11 @@ nav {
 }
 
 /* =========================================
-   MEDIA HOVER REVEAL (Images/Videos in Cards)
+   MEDIA (Images/Videos in Cards)
 ========================================= */
-.project-media, .cert-media {
+
+/* 1. PROJECTS: Hidden by default, reveal on hover */
+.project-media {
     width: 100%;
     height: 0;           
     opacity: 0;          
@@ -319,10 +321,19 @@ nav {
     transition: height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease-in-out;
 }
 
-.project-card:hover .project-media,
-.cert-card:hover .cert-media {
+.project-card:hover .project-media {
     height: 220px;       
     opacity: 1;          
+}
+
+/* 2. CERTIFICATES: Always visible */
+.cert-media {
+    width: 100%;
+    height: 200px; /* Always takes up space */
+    opacity: 1;    /* Always visible */
+    background-color: var(--card-bg);
+    overflow: hidden;
+    border-bottom: 2px solid var(--bg-color); /* Adds a subtle separator line */
 }
 
 /* Projects keep 'cover' so app screenshots fill the box beautifully */
@@ -339,12 +350,13 @@ nav {
 .cert-media img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* This is the magic word that fixes your issue */
-    object-position: center; /* Centers the certificate in the box */
+    object-fit: contain; 
+    object-position: center; 
     transition: transform 0.5s ease;
-    background-color: var(--card-bg); /* Blends the empty space with the card color */
+    background-color: var(--card-bg); 
 }
 
+/* Keep the slight zoom effect when you hover over either card to show they are clickable */
 .project-card:hover .project-media img,
 .project-card:hover .project-media video,
 .cert-card:hover .cert-media img {
