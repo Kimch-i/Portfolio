@@ -42,9 +42,16 @@ html {
     overflow-x: hidden;
     /* Remove any fixed height that might be locking the scroll */
     height: auto; 
+    background-color: #0d0d0d;
+}
+
+html:has(body.light-mode) {
+    background-color: #f5f2ee;
 }
 
 body {
+    margin: 0; 
+    padding: 0;
     background-color: var(--bg);
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
@@ -1002,6 +1009,7 @@ footer {
 footer p {
     font-size: 0.8rem;
     color: var(--text-muted);
+    margin: 0;
 }
 
 /* =========================================
