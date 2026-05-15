@@ -70,6 +70,14 @@ body {
 }
 
 /* =========================================
+   SMOOTH THEME TRANSITION
+========================================= */
+body, header, .skill-block, .proj-panel, .cert-card, .highlight-chip, 
+.social-link, .timeline-badge, .proj-tab, .badge, .nav-links a {
+    transition: background-color 0.4s ease, background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* =========================================
    NOISE OVERLAY
 ========================================= */
 .noise-overlay {
