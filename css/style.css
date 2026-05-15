@@ -593,7 +593,7 @@ nav {
 }
 
 /* =========================================
-   PROJECTS ← Core redesign
+   PROJECTS
 ========================================= */
 .projects-layout {
     display: grid;
@@ -698,6 +698,7 @@ nav {
     background: var(--bg-3);
 }
 
+.proj-panel-img video,
 .proj-panel-img img {
     width: 100%; height: 100%;
     object-fit: cover;
@@ -706,7 +707,7 @@ nav {
     transition: transform 0.5s ease;
 }
 
-.proj-panel:hover .proj-panel-img img { transform: scale(1.03); }
+.proj-panel:hover .proj-panel-img img, .proj-panel:hover .proj-panel-img video { transform: scale(1.03); }
 
 .proj-panel-img-overlay {
     position: absolute; inset: 0;
@@ -761,6 +762,20 @@ nav {
     margin-bottom: 8px;
 }
 
+/* Container for the project buttons */
+.proj-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* Removes the default top margin from the outline button so both buttons align perfectly */
+.proj-actions .btn-primary,
+.proj-actions .btn-outline {
+    margin-top: 0; 
+}
+
 .proj-role {
     font-size: 0.85rem !important;
     color: var(--text-muted) !important;
@@ -768,6 +783,36 @@ nav {
     border-left: 2px solid var(--accent);
     padding-left: 12px;
     margin-top: 12px !important;
+}
+
+/* =========================================
+   VIDEO CONTROLS
+========================================= */
+.mute-toggle-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(20, 20, 20, 0.6); 
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.25s ease;
+}
+
+.mute-toggle-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
 }
 
 /* =========================================

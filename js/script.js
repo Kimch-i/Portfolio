@@ -123,6 +123,28 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ─────────────────────────────────────────
+       5. VIDEO MUTE/UNMUTE TOGGLE
+    ───────────────────────────────────────── */
+    const shiftedVideo = document.getElementById('shifted-video');
+    const muteToggleBtn = document.getElementById('mute-toggle-btn');
+
+    if (shiftedVideo && muteToggleBtn) {
+        const volumeIcon = muteToggleBtn.querySelector('i');
+
+        muteToggleBtn.addEventListener('click', () => {
+            // Toggle the muted property
+            shiftedVideo.muted = !shiftedVideo.muted;
+
+            // Swap the icon based on the current state
+            if (shiftedVideo.muted) {
+                volumeIcon.classList.replace('fa-volume-up', 'fa-volume-mute');
+            } else {
+                volumeIcon.classList.replace('fa-volume-mute', 'fa-volume-up');
+            }
+        });
+    }
+
+/* ─────────────────────────────────────────
    CURSOR PARTICLE EFFECT (Orange Dust)
 ───────────────────────────────────────── */
 const canvas = document.getElementById('particle-canvas');
