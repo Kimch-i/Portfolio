@@ -32,23 +32,34 @@
 }
 
 /* =========================================
-   RESET & BASE
+   RESET & BASE (Fixed Scroll)
 ========================================= */
-*, *::before, *::after {
-    margin: 0; padding: 0;
-    box-sizing: border-box;
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 110px; 
+    
+    /* Lock horizontal only */
+    overflow-x: hidden;
+    /* Remove any fixed height that might be locking the scroll */
+    height: auto; 
 }
-
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
 body {
     background-color: var(--bg);
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
-    line-height: 1.7;
-    transition: background-color 0.35s ease, color 0.35s ease;
+    
+    /* Lock horizontal only */
+    overflow-x: hidden;
+    /* Ensure the body can expand as long as your content is */
+    min-height: 100vh;
+    height: auto;
+    
+    position: relative;
     -webkit-font-smoothing: antialiased;
+    
+    /* This prevents the "shaking" without killing the scroll */
+    overscroll-behavior-x: none; 
 }
 
 /* =========================================
@@ -760,6 +771,41 @@ nav {
     color: var(--text-dim);
     font-size: 0.94rem;
     margin-bottom: 8px;
+}
+
+/* =========================================
+   PROJECT HIGHLIGHTS (Bulleted Lists)
+========================================= */
+.proj-highlights {
+    list-style-type: none;
+    padding: 0;
+    margin: 16px 0 24px 0;
+}
+
+.proj-highlights li {
+    color: var(--text-dim);
+    font-size: 0.94rem;
+    margin-bottom: 12px;
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.6;
+}
+
+/* Custom orange arrow instead of a standard bullet */
+.proj-highlights li::before {
+    content: '▹'; 
+    position: absolute;
+    left: 0;
+    top: -1px;
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Makes the bolded technical terms pop against the dim text */
+.proj-highlights strong {
+    color: var(--text);
+    font-weight: 700;
 }
 
 /* Container for the project buttons */
