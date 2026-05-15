@@ -205,7 +205,6 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 18px 40px;
-    gap: 30px;
 }
 
 .logo {
@@ -214,7 +213,8 @@ nav {
     font-size: 1.2rem;
     letter-spacing: 0.05em;
     white-space: nowrap;
-    flex-shrink: 0;
+    /* NEW: Forces logo to take up equal space on the left */
+    flex: 1; 
 }
 
 .logo-dot { color: var(--accent); }
@@ -222,8 +222,10 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 32px;
+    /* NEW: The gap smoothly shrinks from 32px down to 12px as the screen gets smaller */
+    gap: clamp(12px, 2vw, 32px); 
     flex-wrap: nowrap;
+    justify-content: center;
 }
 
 .nav-links a {
@@ -252,8 +254,12 @@ nav {
 .nav-links a:hover::after { width: 100%; }
 
 .nav-controls {
-    display: flex; align-items: center; gap: 16px;
-    flex-shrink: 0;
+    display: flex; 
+    align-items: center; 
+    /* NEW: Forces controls to take up equal space on the right */
+    justify-content: flex-end; 
+    gap: 16px;
+    flex: 1; 
 }
 
 .btn-theme {
@@ -581,13 +587,18 @@ nav {
     margin-bottom: 16px;
 }
 
-.skills-list { list-style: none; }
+/* Removes the default browser indentation so the icons align with the header */
+.skills-list { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+}
 
 .skills-list li {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 8px 0;
+    padding: 10px 0; /* Slightly increased padding so they don't feel squished */
     font-size: 0.88rem;
     color: var(--text-dim);
     border-bottom: 1px solid var(--border);
@@ -599,7 +610,8 @@ nav {
 
 .skills-list i {
     color: var(--accent);
-    width: 16px; text-align: center;
+    width: 20px; /* Locked the width so all icons center perfectly in a column */
+    text-align: center;
     font-size: 0.9rem;
 }
 
@@ -1030,27 +1042,54 @@ footer p {
    RESPONSIVE & VIEWPORT FIXES
 ========================================= */
 
-/* 1. Laptops (Fixes the Hero text & image overlapping dead-zone) */
+/* 1. Laptops (1200px) */
 @media (max-width: 1200px) {
-    .hero-content { max-width: 55%; } /* Keeps text from crashing into the image */
-    .hero-img-frame { width: 300px; } /* Shrinks image slightly to fit safely */
-    .about-layout { gap: 40px; } /* Prevents the text from squeezing too tight */
+    .hero-content { max-width: 55%; } 
+    .hero-img-frame { width: 300px; } 
+    .about-layout { gap: 40px; } 
+
+    /* MOVED HERE: Trigger hamburger menu earlier to prevent cut-off links */
+    header nav {
+        padding: 14px 24px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 66px; right: 24px;
+        width: 230px;
+        flex-direction: column;
+        background: var(--bg-2);
+        border: 1px solid var(--accent);
+        border-radius: var(--radius-lg);
+        padding: 10px 0;
+        box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+        z-index: 999;
+        gap: 0;
+    }
+    
+    .nav-links.active { display: flex; }
+    .nav-links a { display: block; padding: 12px 20px; font-size: 0.85rem; }
+    .nav-links a:hover { background: var(--accent-dim); transform: none; }
+    .nav-links a::after { display: none; }
+    .hamburger { display: block; }
+    
+    /* Reset the centering fixes for mobile */
+    .nav-controls { flex: unset; justify-content: flex-end; }
+    .logo { flex: unset; }
 }
 
-/* 2. Tablets */
+/* 2. Tablets & Small Laptops (1024px) */
 @media (max-width: 1024px) {
-    header nav { padding: 16px 24px; }
-    .nav-links { gap: 20px; }
-    .nav-links a { font-size: 0.72rem; }
+    /* (The nav rules were moved up to 1200px, so just keep the rest!) */
     .container { padding: 80px 24px; }
-    
-    .hero-image { display: none; } /* Image hides perfectly now */
+    .hero-image { display: none; }
     .hero-content { max-width: 100%; }
-    
     .about-layout { grid-template-columns: 1fr; gap: 40px; }
     .about-highlights { flex-direction: row; flex-wrap: wrap; }
     .highlight-chip { flex: 1 1 140px; }
-    
     .projects-layout { grid-template-columns: 1fr; }
     .projects-index { position: static; flex-direction: row; flex-wrap: wrap; gap: 8px; }
     .proj-tab { width: auto; flex: 1 1 auto; }
