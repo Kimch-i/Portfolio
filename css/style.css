@@ -90,7 +90,7 @@ body {
 .container {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 100px 40px;
+    padding: 60px 40px;
     position: relative;
     z-index: 1;
 }
@@ -470,6 +470,10 @@ nav {
     gap: 28px;
     padding-bottom: 48px;
     position: relative;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
 }
 
 .timeline-badge {
@@ -1084,7 +1088,7 @@ footer p {
 /* 2. Tablets & Small Laptops (1024px) */
 @media (max-width: 1024px) {
     /* (The nav rules were moved up to 1200px, so just keep the rest!) */
-    .container { padding: 80px 24px; }
+    .container { padding: 50px 24px; }
     .hero-image { display: none; }
     .hero-content { max-width: 100%; }
     .about-layout { grid-template-columns: 1fr; gap: 40px; }
@@ -1123,7 +1127,7 @@ footer p {
     .nav-links a::after { display: none; }
     .hamburger { display: block; }
     
-    .container { padding: 60px 20px; }
+    .container { padding: 40px 20px; }
     .hero-name { font-size: clamp(2.5rem, 10vw, 4rem); }
     .hero-name--offset { margin-left: 20px; }
     .section-header h2 { font-size: 2rem; }
