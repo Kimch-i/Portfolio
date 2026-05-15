@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CHANGE THIS: The title that appears on the browser tab -->
     <title>Mark Harold T. Valderrama | Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Font Awesome for easy icons (optional, but good for contact links) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/icons/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 </head>
 <body>
     <canvas id="particle-canvas"></canvas>
 
+    <!-- NOISE OVERLAY -->
+    <div class="noise-overlay"></div>
+
     <!-- NAVIGATION -->
     <header>
         <nav>
-            <div class="logo">MARK.DEV</div>
+            <div class="logo">MARK<span class="logo-dot">.</span>DEV</div>
             
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
@@ -32,83 +33,114 @@
 
             <div class="nav-controls">
                 <button id="theme-toggle" class="btn-theme"><i class="fas fa-moon"></i></button>
-                
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- HERO SECTION -->
+        <!-- ═══════════════════════════════════════
+             HERO
+        ═══════════════════════════════════════ -->
         <section id="hero" class="container">
+            <div class="hero-eyebrow">
+                <span class="eyebrow-line"></span>
+                <span>AVAILABLE FOR COLLABORATION</span>
+                <span class="eyebrow-dot"></span>
+            </div>
             <div class="hero-content">
-                <h1 class="accent-text">HELLO!</h1>
-                <!-- CHANGE THIS: Your main headline/title -->
-                <h2>I AM A COMPUTER SCIENCE STUDENT & DEVELOPER, BRINGING IDEAS TO LIFE THROUGH CODE.</h2>
-                <a href="#contact" class="btn-primary">GET IN TOUCH</a>
+                <h1>
+                    <span class="hero-name">Mark Harold</span>
+                    <span class="hero-name hero-name--offset">Valderrama</span>
+                </h1>
+                <p class="hero-sub">CS Student &amp; Developer &mdash; turning ideas into experiences through Flutter, AI, and AWS.</p>
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn-primary">VIEW WORK</a>
+                    <a href="#contact" class="btn-ghost">GET IN TOUCH <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
             <div class="hero-image">
-                <!-- CHANGE THIS: Add your image to the assets folder and update the src -->
-                <img src="assets/images/hero-profile.jpg" alt="Profile Picture placeholder">
-            </div>
-        </section>
-
-        <!-- ABOUT SECTION -->
-        <section id="about" class="container">
-            <div class="section-header">
-                <h2>ABOUT <span>ME</span></h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <!-- CHANGE THIS: Your personal biography -->
-                    <p>I am Mark Harold T. Valderrama, a third-year Computer Science student at Holy Angel University. I have a deep passion for exploring how technology can solve real-world problems.</p>
-                    <p>My journey in development has led me to specialize in mobile application development with Flutter and Dart, alongside cloud computing and DevOps using Amazon Web Services. I am also deeply interested in Machine Learning and AI, specifically working with Convolutional Neural Networks (CNNs).</p>
-                    <a href="assets/Mark_Resume.pdf" target="_blank" class="btn-secondary">DOWNLOAD RESUME</a>
+                <div class="hero-img-frame">
+                    <img src="assets/images/hero-profile.jpg" alt="Mark Harold Valderrama">
+                    <div class="hero-img-accent"></div>
                 </div>
             </div>
         </section>
 
-        <!-- EDUCATION SECTION -->
+        <!-- ═══════════════════════════════════════
+             ABOUT
+        ═══════════════════════════════════════ -->
+        <section id="about" class="container">
+            <div class="section-header">
+                <p class="section-label">01 / WHO I AM</p>
+                <h2>About <em>Me</em></h2>
+            </div>
+            <div class="about-layout">
+                <div class="about-text">
+                    <p class="about-lead">I'm a third-year Computer Science student at Holy Angel University with a deep passion for building things that matter.</p>
+                    <p>My focus areas span mobile application development with Flutter &amp; Dart, cloud computing and DevOps on AWS, and Machine Learning — specifically Convolutional Neural Networks. I love the intersection of elegant code and real-world impact.</p>
+                    <a href="assets/Mark_Resume.pdf" target="_blank" class="btn-primary">DOWNLOAD RESUME <i class="fas fa-download"></i></a>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-chip"><i class="fas fa-mobile-alt"></i><span>Mobile Dev</span></div>
+                    <div class="highlight-chip"><i class="fas fa-cloud"></i><span>AWS / Cloud</span></div>
+                    <div class="highlight-chip"><i class="fas fa-brain"></i><span>ML / AI / CNNs</span></div>
+                    <div class="highlight-chip"><i class="fab fa-flutter"></i><span>Flutter &amp; Dart</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             EDUCATION
+        ═══════════════════════════════════════ -->
         <section id="education" class="container">
             <div class="section-header">
-                <h2>MY <span>EDUCATION</span></h2>
+                <p class="section-label">02 / BACKGROUND</p>
+                <h2>Education</h2>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h4 class="highlight-text">Bachelor of Science in Computer Science</h4>
-                    <h5>Holy Angel University | 2023 - Present</h5>
-                    <p class="highlight-text">President's Lister</p>
-                    <p>Consistently maintained top academic standing since my first semester.</p>
-                    <p class="highlight-text">SINAG 2026 Awardee</p>
-                    <p>Recognized for representing Holy Angel University in various competitive hackathons, demonstrating excellence in technical problem-solving and innovation.</p>
-                    <p class="highlight-text">HAFRD Academic Scholar</p>
-                    <p>Awarded the HAFRD Academic Scholarship during my third year in recognition of outstanding academic performance.</p>
+                    <div class="timeline-badge"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-body">
+                        <div class="timeline-meta">2023 &mdash; Present</div>
+                        <h4>BS Computer Science</h4>
+                        <h5>Holy Angel University</h5>
+                        <div class="timeline-pills">
+                            <span class="pill">President's Lister</span>
+                            <span class="pill">SINAG 2026 Awardee</span>
+                            <span class="pill">HAFRD Academic Scholar</span>
+                        </div>
+                        <p>Consistently maintained top academic standing. Recognized for representing HAU in competitive hackathons and awarded the HAFRD Academic Scholarship in third year.</p>
+                    </div>
                 </div>
-
                 <div class="timeline-item">
-                    <h4 class="highlight-text">Science, Technology, Engineering, and Mathematics (STEM) </h4>
-                    <h5>Angeles City Science High School | 2021 - 2023</h5>
-                    <p class="highlight-text">With Honors</p>
-                    <p>Graduated with honors.</p>
-                    <p class="highlight-text">Math Society Member (2022 - 2023)</p>
-                    <p>Being member of one of the most active clubs in the school in our batch.</p>
+                    <div class="timeline-badge"><i class="fas fa-school"></i></div>
+                    <div class="timeline-body">
+                        <div class="timeline-meta">2021 &mdash; 2023</div>
+                        <h4>STEM Strand</h4>
+                        <h5>Angeles City Science High School</h5>
+                        <div class="timeline-pills">
+                            <span class="pill">With Honors</span>
+                            <span class="pill">Math Society Member</span>
+                        </div>
+                        <p>Graduated with honors and was an active member of one of the school's most prominent academic clubs.</p>
+                    </div>
                 </div>
             </div>
-            
         </section>
 
-        <!-- SKILLS SECTION -->
+        <!-- ═══════════════════════════════════════
+             SKILLS
+        ═══════════════════════════════════════ -->
         <section id="skills" class="container">
             <div class="section-header">
-                <h2>MY <span>SKILLS</span></h2>
+                <p class="section-label">03 / TOOLBOX</p>
+                <h2>My Skills</h2>
             </div>
-            <div class="grid-layout">
-                
-                <!-- Card 1: Programming Languages -->
-                <div class="card">
-                    <h3>Programming Languages</h3>
+            <div class="skills-grid">
+                <div class="skill-block">
+                    <div class="skill-block-icon"><i class="fas fa-terminal"></i></div>
+                    <h3>Languages</h3>
                     <ul class="skills-list">
                         <li><i class="fab fa-python"></i> Python</li>
                         <li><i class="fab fa-java"></i> Java</li>
@@ -117,14 +149,13 @@
                         <li><i class="fas fa-code"></i> Dart</li>
                     </ul>
                 </div>
-
-                <!-- Card 2: Frameworks & Tools -->
-                <div class="card">
-                    <h3>Frameworks & Tools</h3>
+                <div class="skill-block">
+                    <div class="skill-block-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Frameworks &amp; Tools</h3>
                     <ul class="skills-list">
                         <li><i class="fas fa-mobile-alt"></i> Flutter</li>
                         <li><i class="fas fa-database"></i> Supabase</li>
-                        <li><i class="fas fa-laptop-code"></i> Visual Studio Code</li>
+                        <li><i class="fas fa-laptop-code"></i> VS Code</li>
                         <li><i class="fab fa-figma"></i> Figma</li>
                         <li><i class="fab fa-github"></i> GitHub</li>
                         <li><i class="fas fa-cloud"></i> AWS</li>
@@ -132,407 +163,360 @@
                         <li><i class="fas fa-gamepad"></i> Godot</li>
                     </ul>
                 </div>
-
-                <!-- Card 3: Database Management -->
-                <div class="card">
-                    <h3>Database Management</h3>
+                <div class="skill-block">
+                    <div class="skill-block-icon"><i class="fas fa-server"></i></div>
+                    <h3>Databases</h3>
                     <ul class="skills-list">
                         <li><i class="fas fa-server"></i> MySQL</li>
                         <li><i class="fas fa-database"></i> PostgreSQL</li>
                     </ul>
                 </div>
-
-                <!-- Card 4: Soft Skills -->
-                <div class="card">
+                <div class="skill-block">
+                    <div class="skill-block-icon"><i class="fas fa-users"></i></div>
                     <h3>Soft Skills</h3>
                     <ul class="skills-list">
-                        <li><i class="fas fa-comments"></i> Communication & Collaboration</li>
-                        <li><i class="fas fa-sync-alt"></i> Teamwork & Adaptability</li>
-                        <li><i class="fas fa-clock"></i> Time Management & Organization</li>
-                        <li><i class="fas fa-puzzle-piece"></i> Problem-Solving & Critical Thinking</li>
-                        <li><i class="fas fa-rocket"></i> Willingness to Learn New Tech</li>
+                        <li><i class="fas fa-comments"></i> Communication &amp; Collaboration</li>
+                        <li><i class="fas fa-sync-alt"></i> Teamwork &amp; Adaptability</li>
+                        <li><i class="fas fa-clock"></i> Time Management</li>
+                        <li><i class="fas fa-puzzle-piece"></i> Problem-Solving</li>
+                        <li><i class="fas fa-rocket"></i> Fast Learner</li>
                     </ul>
                 </div>
-
             </div>
         </section>
 
-        <!-- PROJECTS SECTION -->
+        <!-- ═══════════════════════════════════════
+             PROJECTS  ← Major redesign
+        ═══════════════════════════════════════ -->
         <section id="projects" class="container">
             <div class="section-header">
-                <h2>FEATURED <span>PROJECTS</span></h2>
+                <p class="section-label">04 / WORK</p>
+                <h2>Featured <em>Projects</em></h2>
             </div>
-            <div class="grid-layout">
-                
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <!-- NEW: Media Container -->
-                    <div class="project-media">
-                        <!-- For an image, use this: -->
-                        <img src="assets/images/palai-demo.jpg" alt="PalAI App Screenshot">
-                        
-                        <!-- If you want a silent, looping demo video instead, COMMENT OUT the <img> above and UNCOMMENT the <video> below: -->
-                        <!-- <video autoplay loop muted playsinline><source src="assets/videos/palai-demo.mp4" type="video/mp4"></video> -->
-                    </div>
-                    <div class="project-info">
-                        <h3>PalAI</h3>
-                        <p>An AI-powered mobile application utilizing MobileNetV4 for accurate rice disease detection in the Pampanga region.</p>
-                        <a href="#" class="btn-outline">VIEW REPO</a>
-                    </div>
-                </div>
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-media">
-                        <img src="assets/images/alertwave-demo.jpg" alt="AlertWave App Screenshot">
-                    </div>
-                    <div class="project-info">
-                        <h3>AlertWave</h3>
-                        <p>A mobile accessibility app built to detect environmental sounds using CNN-based audio classification.</p>
-                        <a href="#" class="btn-outline">VIEW REPO</a>
-                    </div>
-                </div>
+            <div class="projects-layout">
 
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-media">
-                        <img src="assets/images/chainpulse-demo.jpg" alt="ChainPulse Web Prototype Screenshot">
-                    </div>
-                    <div class="project-info">
-                        <h3>ChainPulse</h3>
-                        <p>A web-based blockchain prototype designed for decentralized news and credential verification.</p>
-                        <a href="#" class="btn-outline">VIEW REPO</a>
-                    </div>
-                </div>
+                <!-- LEFT: Index list -->
+                <nav class="projects-index" aria-label="Project list">
+                    <button class="proj-tab active" data-project="0">
+                        <span class="proj-num">01</span>
+                        <span class="proj-tab-name">Shifted</span>
+                        <i class="fas fa-arrow-right proj-tab-arrow"></i>
+                    </button>
+                    <button class="proj-tab" data-project="1">
+                        <span class="proj-num">02</span>
+                        <span class="proj-tab-name">Alert Wave</span>
+                        <i class="fas fa-arrow-right proj-tab-arrow"></i>
+                    </button>
+                    <button class="proj-tab" data-project="2">
+                        <span class="proj-num">03</span>
+                        <span class="proj-tab-name">Aldaw Wave</span>
+                        <i class="fas fa-arrow-right proj-tab-arrow"></i>
+                    </button>
+                    <button class="proj-tab" data-project="3">
+                        <span class="proj-num">04</span>
+                        <span class="proj-tab-name">Fund Buddy</span>
+                        <i class="fas fa-arrow-right proj-tab-arrow"></i>
+                    </button>
+                    <button class="proj-tab" data-project="4">
+                        <span class="proj-num">05</span>
+                        <span class="proj-tab-name">sKEEP</span>
+                        <i class="fas fa-arrow-right proj-tab-arrow"></i>
+                    </button>
+                    <button class="proj-tab" data-project="5">
+                        <span class="proj-num">06</span>
+                        <span class="proj-tab-name">Truth in Tales</span>
+                        <i class="fas fa-arrow-right proj-tab-arrow"></i>
+                    </button>
+                    <button class="proj-tab" data-project="6">
+                        <span class="proj-num">07</span>
+                        <span class="proj-tab-name">Mharnies</span>
+                        <i class="fas fa-arrow-right proj-tab-arrow"></i>
+                    </button>
+                </nav>
 
+                <!-- RIGHT: Detail panel -->
+                <div class="projects-detail">
+
+                    <div class="proj-panel active" data-panel="0">
+                        <div class="proj-panel-img">
+                            <img src="assets/images/palai-demo.jpg" alt="Shifted">
+                            <div class="proj-panel-img-overlay"></div>
+                        </div>
+                        <div class="proj-panel-body">
+                            <div class="proj-badges">
+                                <span class="badge">Independent</span>
+                                <span class="badge badge--tech">MobileNetV4</span>
+                            </div>
+                            <h3>Shifted</h3>
+                            <p>An AI-powered mobile application utilizing MobileNetV4 for accurate rice disease detection in the Pampanga region. Designed to empower local farmers with fast, on-device diagnosis.</p>
+                            <a href="#" class="btn-outline">VIEW REPO <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="proj-panel" data-panel="1">
+                        <div class="proj-panel-img">
+                            <img src="assets/images/palai-demo.jpg" alt="Alert Wave">
+                            <div class="proj-panel-img-overlay"></div>
+                        </div>
+                        <div class="proj-panel-body">
+                            <div class="proj-badges">
+                                <span class="badge">Independent</span>
+                                <span class="badge badge--tech">MobileNetV4</span>
+                            </div>
+                            <h3>Alert Wave</h3>
+                            <p>An AI-powered mobile application utilizing MobileNetV4 for accurate rice disease detection in the Pampanga region.</p>
+                            <a href="#" class="btn-outline">VIEW REPO <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="proj-panel" data-panel="2">
+                        <div class="proj-panel-img">
+                            <img src="assets/images/palai-demo.jpg" alt="Aldaw Wave">
+                            <div class="proj-panel-img-overlay"></div>
+                        </div>
+                        <div class="proj-panel-body">
+                            <div class="proj-badges">
+                                <span class="badge">Independent</span>
+                                <span class="badge badge--tech">MobileNetV4</span>
+                            </div>
+                            <h3>Aldaw Wave</h3>
+                            <p>An AI-powered mobile application utilizing MobileNetV4 for accurate rice disease detection in the Pampanga region.</p>
+                            <a href="#" class="btn-outline">VIEW REPO <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="proj-panel" data-panel="3">
+                        <div class="proj-panel-img">
+                            <img src="assets/images/alertwave-demo.jpg" alt="Fund Buddy">
+                            <div class="proj-panel-img-overlay"></div>
+                        </div>
+                        <div class="proj-panel-body">
+                            <div class="proj-badges">
+                                <span class="badge">Independent</span>
+                                <span class="badge badge--tech">CNN</span>
+                            </div>
+                            <h3>Fund Buddy</h3>
+                            <p>A mobile accessibility app built to detect environmental sounds using CNN-based audio classification, helping hearing-impaired users stay aware of their surroundings.</p>
+                            <a href="#" class="btn-outline">VIEW REPO <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="proj-panel" data-panel="4">
+                        <div class="proj-panel-img">
+                            <img src="assets/images/chainpulse-demo.jpg" alt="sKEEP">
+                            <div class="proj-panel-img-overlay"></div>
+                        </div>
+                        <div class="proj-panel-body">
+                            <div class="proj-badges">
+                                <span class="badge badge--team">Team of 4</span>
+                                <span class="badge badge--team">Hackathon</span>
+                            </div>
+                            <h3>sKEEP</h3>
+                            <p>A web-based blockchain prototype designed for decentralized news and credential verification.</p>
+                            <p class="proj-role"><strong>My Role:</strong> Backend data routing and database integration.</p>
+                            <a href="#" class="btn-outline">VIEW REPO <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="proj-panel" data-panel="5">
+                        <div class="proj-panel-img">
+                            <img src="assets/images/chainpulse-demo.jpg" alt="Truth in Tales">
+                            <div class="proj-panel-img-overlay"></div>
+                        </div>
+                        <div class="proj-panel-body">
+                            <div class="proj-badges">
+                                <span class="badge badge--team">Team of 4</span>
+                                <span class="badge badge--team">Hackathon</span>
+                            </div>
+                            <h3>Truth in Tales</h3>
+                            <p>A web-based blockchain prototype designed for decentralized news and credential verification.</p>
+                            <p class="proj-role"><strong>My Role:</strong> Backend data routing and database integration.</p>
+                            <a href="#" class="btn-outline">VIEW REPO <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="proj-panel" data-panel="6">
+                        <div class="proj-panel-img">
+                            <img src="assets/images/chainpulse-demo.jpg" alt="Mharnies">
+                            <div class="proj-panel-img-overlay"></div>
+                        </div>
+                        <div class="proj-panel-body">
+                            <div class="proj-badges">
+                                <span class="badge badge--team">Team of 4</span>
+                                <span class="badge badge--team">Hackathon</span>
+                            </div>
+                            <h3>Mharnies</h3>
+                            <p>A web-based blockchain prototype designed for decentralized news and credential verification.</p>
+                            <p class="proj-role"><strong>My Role:</strong> Backend data routing and database integration.</p>
+                            <a href="#" class="btn-outline">VIEW REPO <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
-        <!-- EXPERIENCE SECTION -->
+        <!-- ═══════════════════════════════════════
+             EXPERIENCE
+        ═══════════════════════════════════════ -->
         <section id="experience" class="container">
             <div class="section-header">
-                <h2>MY <span>EXPERIENCE</span></h2>
+                <p class="section-label">05 / JOURNEY</p>
+                <h2>Experience</h2>
             </div>
             <div class="timeline">
-                <!-- CHANGE THIS: Add your experience here -->
                 <div class="timeline-item">
-                    <h4 class="highlight-text">Committee Staff for Public Relation and Information</h4>
-                    <h5>Code Geeks - Holy Angel University | Jun 2024 - April 2026</h5>
-                    <p>Recorded and shared accurate minutes after virtual team meetings, drafted clear email templates for distributing event certificates to attendees, and assisted in writing structured scripts for organizational events.</p>
+                    <div class="timeline-badge"><i class="fas fa-bullhorn"></i></div>
+                    <div class="timeline-body">
+                        <div class="timeline-meta">Jun 2024 – Apr 2026</div>
+                        <h4>Committee Staff — Public Relations &amp; Information</h4>
+                        <h5>Code Geeks · Holy Angel University</h5>
+                        <p>Recorded meeting minutes, drafted email templates for certificate distribution, and wrote structured scripts for organizational events.</p>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <h4 class="highlight-text">Committee Staff for Finance</h4>
-                    <h5>Google Developers Group on Campus - Holy Angel University | Jun 2025 - April 2026</h5>
-                    <p>Handled payments received for GDG staff uniforms, verified that the collected amounts aligned with the number of purchases recorded in Google Forms, and computed the total revenue from merchandise sales.</p>
+                    <div class="timeline-badge"><i class="fas fa-coins"></i></div>
+                    <div class="timeline-body">
+                        <div class="timeline-meta">Jun 2025 – Apr 2026</div>
+                        <h4>Committee Staff — Finance</h4>
+                        <h5>Google Developers Group on Campus · Holy Angel University</h5>
+                        <p>Handled payments for GDG uniforms, verified collected amounts against Google Forms records, and computed merchandise revenue totals.</p>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <h4 class="highlight-text">CSO Representative</h4>
-                    <h5>AWS Learning Club - Holy Angel University | Jun 2025 - April 2026</h5>
-                    <p>Primarily handled major announcements from the heads of school organizations and communicated them effectively to the club’s officers.</p>
+                    <div class="timeline-badge"><i class="fas fa-users"></i></div>
+                    <div class="timeline-body">
+                        <div class="timeline-meta">Jun 2025 – Apr 2026</div>
+                        <h4>CSO Representative</h4>
+                        <h5>AWS Learning Club · Holy Angel University</h5>
+                        <p>Communicated major announcements from school organization heads to club officers effectively.</p>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <h4 class="highlight-text">Cloudstaff’s AI Hackathon 2025 Participant</h4>
-                    <h5>Cloudstaff | November 2025</h5>
-                    <p>Our team was awarded for Best Student Contribution.</p>
-                    <p>Developed an AI-powered chatbot using Dify with a clean and functional front-end interface for seamless user interaction, and delivered a compelling final pitch to judges effectively communicating the project’s technical value and real-world application.</p>
-                </div>  
-                <div class="timeline-item">
-                    <h4 class="highlight-text">Philippine Junior Data Science Challenge (PJDSC) 2025 Participant</h4>
-                    <h5>University of the Philippines Diliman | September - November 2025</h5>
-                    <p>Our team was recognized as Top 10 Finalists.</p>
-                    <p>Engineered a scalable backend architecture using Python to efficiently manage, process, and route application data, and successfully integrated the frontend interface with backend database systems to ensure seamless data flow and a cohesive final product.</p>
-                </div>              
-                <div class="timeline-item">
-                    <h4 class="highlight-text">Committee Staff for Creatives</h4>
-                    <h5>League of Outstanding Programmers - Holy Angel University | June 2024 - April 2025</h5>
-                    <p>Assigned to take photos and record videos during events for documentation purposes, which were later used in official letters and social media posts.</p>
-                </div>     
-                <div class="timeline-item">
-                    <h4 class="highlight-text">Committee Staff for Logistics</h4>
-                    <h5>School of Computing Student Council - Holy Angel University | November 2024 - April 2025</h5>
-                    <p>Assisted in logistics operations by managing on-site supply distribution during events and maintaining office organization and cleanliness to support efficient team workflows.</p>
+                    <div class="timeline-badge award-badge"><i class="fas fa-award"></i></div>
+                    <div class="timeline-body">
+                        <div class="timeline-meta">November 2025</div>
+                        <h4>Cloudstaff's AI Hackathon 2025 — Participant</h4>
+                        <h5>Cloudstaff</h5>
+                        <div class="timeline-pills"><span class="pill pill--award">🏆 Best Student Contribution</span></div>
+                        <p>Built an AI-powered chatbot using Dify with a clean front-end interface and delivered a compelling pitch communicating technical value and real-world application.</p>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <h4 class="highlight-text">Committee Staff for Vice-Governor</h4>
-                    <h5>School of Computing Student Council - Holy Angel University | June 2024 - October 2024</h5>
-                    <p>Assigned as a support member for various tasks, including props creation, and assisted in areas where additional manpower was needed during events.</p>
+                    <div class="timeline-badge award-badge"><i class="fas fa-medal"></i></div>
+                    <div class="timeline-body">
+                        <div class="timeline-meta">Sep – Nov 2025</div>
+                        <h4>Philippine Junior Data Science Challenge (PJDSC) 2025</h4>
+                        <h5>University of the Philippines Diliman</h5>
+                        <div class="timeline-pills"><span class="pill pill--award">🏅 Top 10 Finalists</span></div>
+                        <p>Engineered a scalable Python backend and integrated frontend with database systems for seamless data flow in the final product.</p>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <h4 class="highlight-text">Student Assistant</h4>
-                    <h5>Holy Angel University | November 2023 - October 2024</h5>
-                    <p>Digitized daily physical logs into Excel databases to ensure accurate tracking of incoming and outgoing departmental assets, and conducted daily classroom schedule audits through physical walkthroughs to verify and monitor professor attendance.</p>
+                    <div class="timeline-badge"><i class="fas fa-camera"></i></div>
+                    <div class="timeline-body">
+                        <div class="timeline-meta">Jun 2024 – Apr 2025</div>
+                        <h4>Committee Staff — Creatives</h4>
+                        <h5>League of Outstanding Programmers · Holy Angel University</h5>
+                        <p>Photographed and recorded events for documentation used in official letters and social media posts.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge"><i class="fas fa-box"></i></div>
+                    <div class="timeline-body">
+                        <div class="timeline-meta">Nov 2024 – Apr 2025</div>
+                        <h4>Committee Staff — Logistics</h4>
+                        <h5>School of Computing Student Council · Holy Angel University</h5>
+                        <p>Managed on-site supply distribution during events and maintained office organization to support efficient workflows.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-body">
+                        <div class="timeline-meta">Nov 2023 – Oct 2024</div>
+                        <h4>Student Assistant</h4>
+                        <h5>Holy Angel University</h5>
+                        <p>Digitized physical logs into Excel databases and conducted daily classroom audits to verify professor attendance.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CERTIFICATIONS SECTION -->
+        <!-- ═══════════════════════════════════════
+             CERTIFICATIONS
+        ═══════════════════════════════════════ -->
         <section id="certifications" class="container">
             <div class="section-header">
-                <h2>MY <span>CERTIFICATIONS</span></h2>
+                <p class="section-label">06 / CREDENTIALS</p>
+                <h2>Certifications</h2>
             </div>
-            <div class="grid-layout">
-                
-                <!-- Certification 1 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/CISCO/IBM.png" alt="IBM Artificial Intelligence Fundamentals">
-                    </div>
-                    <div class="cert-info">
-                        <h3>IBM Artificial Intelligence Fundamentals</h3>
-                        <p>Issued March 2026</p>
-                    </div>
-                </div>
-
-                <!-- Certification 2 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/CISCO/Data_Science.png" alt="Data Science Essentials with Python">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Data Science Essentials with Python</h3>
-                        <p>Issued January 2026</p>
-                    </div>
-                </div>
-
-                <!-- Certification 3 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/CISCO/IntroData.png" alt="Introduction to Data Science">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Introduction to Data Science</h3>
-                        <p>Issued January 2026</p>
-                    </div>
-                </div>
-
-                <!-- Certification 4 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/CISCO/Data_Analytics.png" alt="Data Analytics Essentials">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Data Analytics Essentials</h3>
-                        <p>Issued January 2026</p>
-                    </div>
-                </div>  
-
-                <!-- Certification 5 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/AWS/AWS.png" alt="AWS Academy Graduate Cloud Foundations Training Badge">
-                    </div>
-                    <div class="cert-info">
-                        <h3>AWS Academy Graduate Cloud Foundations Training Badge</h3>
-                        <p>Issued December 2025</p>
-                    </div>
-                </div>
-
-                <!-- Certification 6 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/CISCO/Cyber_Threat.png" alt="Cyber Threat Management">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Cyber Threat Management</h3>
-                        <p>Issued November 2025</p>
-                    </div>
-                </div>  
-                
-                <!-- Certification 7 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/FCC/BackEnd.png" alt="Back End Development and APIs">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Back End Development and APIs</h3>
-                        <p>Issued October 2025</p>
-                    </div>
-                </div>
-
-                <!-- Certification 8 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/Google/Gemini.png" alt="Gemini for DevOps Engineers">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Gemini for DevOps Engineers</h3>
-                        <p>Issued September 2025</p>
-                    </div>
-                </div>  
-                
-                <!-- Certification 9 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/CISCO/JS2.png" alt="JavaScript Essentials 2">
-                    </div>
-                    <div class="cert-info">
-                        <h3>JavaScript Essentials 2</h3>
-                        <p>Issued September 2025</p>
-                    </div>
-                </div>
-
-                <!-- Certification 10 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/CISCO/EndPoint.png" alt="Endpoint Security">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Endpoint Security</h3>
-                        <p>Issued August 2025</p>
-                    </div>
-                </div>  
-                
-                <!-- Certification 11 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/SimpliLearn/IntroUIUX.png" alt="Introduction to Graphic Design; Basics of UI/UX">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Introduction to Graphic Design; Basics of UI/UX</h3>
-                        <p>Issued August 2025</p>
-                    </div>
-                </div>
-                
-                <!-- Certification 12 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/CISCO/CSS.png" alt="CSS Essentials">
-                    </div>
-                    <div class="cert-info">
-                        <h3>CSS Essentials</h3>
-                        <p>Issued May 2025</p>
-                    </div>
-                </div>
-
-                <!-- Certification 13 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/CISCO/HTML.png" alt="HTML Essentials">
-                    </div>
-                    <div class="cert-info">
-                        <h3>HTML Essentials</h3>
-                        <p>Issued April 2025</p>
-                    </div>
-                </div>  
-
-                <!-- Certification 14 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/FCC/Database.png" alt="Relational Database">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Relational Database</h3>
-                        <p>Issued January 2025</p>
-                    </div>
-                </div>
-
-                <!-- Certification 15 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/CISCO/JS1.png" alt="JavaScript Essentials 1">
-                    </div>
-                    <div class="cert-info">
-                        <h3>JavaScript Essentials 1</h3>
-                        <p>Issued October 2024</p>
-                    </div>
-                </div>  
-                
-                <!-- Certification 16 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/SimpliLearn/IntroFigma.png" alt="Introduction to Figma Course">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Introduction to Figma Course</h3>
-                        <p>Issued September 2024</p>
-                    </div>
-                </div>
-
-                <!-- Certification 17 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/Coursera/CourseraFigma.png" alt="Work with Components in Figma">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Work with Components in Figma</h3>
-                        <p>Issued September 2024</p>
-                    </div>
-                </div>
-
-                <!-- Certification 18 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/FCC/WebDesign.png" alt="Responsive Web Design">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Responsive Web Design</h3>
-                        <p>Issued August 2024</p>
-                    </div>
-                </div>  
-
-                <!-- Certification 19 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/EC/BasicTurtle.png" alt="Learn Python 3 with Turtle">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Learn Python 3 with Turtle</h3>
-                        <p>Issued January 2024</p>
-                    </div>
-                </div>
-
-                <!-- Certification 20 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/EC/BasicPython.png" alt="Python for Absolute Beginners">
-                    </div>
-                    <div class="cert-info">
-                        <h3>Python for Absolute Beginners</h3>
-                        <p>Issued January 2024</p>
-                    </div>
-                </div>  
-                
-                <!-- Certification 21 -->
-                <div class="cert-card">
-                    <div class="cert-media">
-                        <img src="assets/certificates/CompTIA/Comptia.png" alt="CompTIA IT Fundamentals+ (ITF+) Certification">
-                    </div>
-                    <div class="cert-info">
-                        <h3>CompTIA IT Fundamentals+ (ITF+) Certification</h3>
-                        <p>Issued November 2023</p>
-                    </div>
-                </div>
-
+            <div class="cert-grid">
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/CISCO/IBM.png" alt="IBM AI Fundamentals"></div><div class="cert-info"><h3>IBM Artificial Intelligence Fundamentals</h3><p>March 2026</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/CISCO/Data_Science.png" alt="Data Science Essentials"></div><div class="cert-info"><h3>Data Science Essentials with Python</h3><p>January 2026</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/CISCO/IntroData.png" alt="Intro to Data Science"></div><div class="cert-info"><h3>Introduction to Data Science</h3><p>January 2026</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/CISCO/Data_Analytics.png" alt="Data Analytics Essentials"></div><div class="cert-info"><h3>Data Analytics Essentials</h3><p>January 2026</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/AWS/AWS.png" alt="AWS Cloud Foundations"></div><div class="cert-info"><h3>AWS Academy Graduate Cloud Foundations</h3><p>December 2025</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/CISCO/Cyber_Threat.png" alt="Cyber Threat Management"></div><div class="cert-info"><h3>Cyber Threat Management</h3><p>November 2025</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/FCC/BackEnd.png" alt="Back End Development"></div><div class="cert-info"><h3>Back End Development and APIs</h3><p>October 2025</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/Google/Gemini.png" alt="Gemini for DevOps"></div><div class="cert-info"><h3>Gemini for DevOps Engineers</h3><p>September 2025</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/CISCO/JS2.png" alt="JavaScript Essentials 2"></div><div class="cert-info"><h3>JavaScript Essentials 2</h3><p>September 2025</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/CISCO/EndPoint.png" alt="Endpoint Security"></div><div class="cert-info"><h3>Endpoint Security</h3><p>August 2025</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/SimpliLearn/IntroUIUX.png" alt="UI/UX Basics"></div><div class="cert-info"><h3>Introduction to Graphic Design; UI/UX Basics</h3><p>August 2025</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/CISCO/CSS.png" alt="CSS Essentials"></div><div class="cert-info"><h3>CSS Essentials</h3><p>May 2025</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/CISCO/HTML.png" alt="HTML Essentials"></div><div class="cert-info"><h3>HTML Essentials</h3><p>April 2025</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/FCC/Database.png" alt="Relational Database"></div><div class="cert-info"><h3>Relational Database</h3><p>January 2025</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/CISCO/JS1.png" alt="JavaScript Essentials 1"></div><div class="cert-info"><h3>JavaScript Essentials 1</h3><p>October 2024</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/SimpliLearn/IntroFigma.png" alt="Intro to Figma"></div><div class="cert-info"><h3>Introduction to Figma Course</h3><p>September 2024</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/Coursera/CourseraFigma.png" alt="Figma Components"></div><div class="cert-info"><h3>Work with Components in Figma</h3><p>September 2024</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/FCC/WebDesign.png" alt="Responsive Web Design"></div><div class="cert-info"><h3>Responsive Web Design</h3><p>August 2024</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/EC/BasicTurtle.png" alt="Python with Turtle"></div><div class="cert-info"><h3>Learn Python 3 with Turtle</h3><p>January 2024</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/EC/BasicPython.png" alt="Python Beginners"></div><div class="cert-info"><h3>Python for Absolute Beginners</h3><p>January 2024</p></div></div>
+                <div class="cert-card"><div class="cert-media"><img src="assets/certificates/CompTIA/Comptia.png" alt="CompTIA ITF+"></div><div class="cert-info"><h3>CompTIA IT Fundamentals+ (ITF+)</h3><p>November 2023</p></div></div>
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
+        <!-- ═══════════════════════════════════════
+             CONTACT
+        ═══════════════════════════════════════ -->
         <section id="contact" class="container">
             <div class="section-header">
-                <h2>GET IN <span>TOUCH</span></h2>
+                <p class="section-label">07 / REACH OUT</p>
+                <h2>Get In <em>Touch</em></h2>
             </div>
-            <div class="contact-info">
-                <!-- CHANGE THIS: Your contact links -->
-                <p>Feel free to reach out for collaborations or just a friendly chat!</p>
+            <div class="contact-layout">
+                <p class="contact-lead">Open to collaborations, hackathons, and friendly conversations about tech.</p>
                 <div class="social-links">
-                    <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
-                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:your.email@example.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Mark Harold T. Valderrama. All rights reserved.</p>
+        <div class="footer-inner">
+            <span class="logo">MARK<span class="logo-dot">.</span>DEV</span>
+            <p>&copy; 2026 Mark Harold T. Valderrama. All rights reserved.</p>
+        </div>
     </footer>
-    <!-- ========================================= -->
-    <!-- NEW: LIGHTBOX MODAL FOR CERTIFICATES -->
-    <!-- ========================================= -->
+
+    <!-- LIGHTBOX -->
     <div id="lightbox" class="lightbox">
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightbox-img">
     </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
